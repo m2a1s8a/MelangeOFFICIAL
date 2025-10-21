@@ -1,0 +1,644 @@
+		html,
+		body {
+			height: 100%;
+			/* HTMLとbodyの高さを画面いっぱいに設定 */
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			display: flex;
+			/* Flexboxを有効にする */
+			flex-direction: column;
+			/* 要素を縦に並べる */
+		}
+
+		/* メインコンテンツ（#main または main タグ）を強制的に伸ばす */
+		#main {
+			flex-grow: 1;
+			/* ✨ これでフッターが画面下まで押し下げられる ✨ */
+			/* ※ live.htmlでは #main が使われとるで */
+		}
+
+
+		footer {
+			/* 必要に応じて、ここで背景色やpaddingを設定する */
+			flex-shrink: 0;
+			/* フッターは縮まないように */
+		}
+
+
+		/* ========================================= */
+		/* ハンバーガーメニュー関連のCSS (変更なし) */
+		/* ========================================= */
+		header {
+			background-color: #f4f4f4;
+			padding: 10px 20px;
+			position: fixed;
+			width: 100%;
+			top: 0;
+			left: 0;
+			z-index: 1000;
+			box-sizing: border-box;
+		}
+
+		.header-content {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		header h1 {
+			margin: 0;
+			font-size: 24px;
+			color: #333;
+		}
+
+		.hamburger-menu {
+			display: none;
+			flex-direction: column;
+			justify-content: space-around;
+			width: 30px;
+			height: 25px;
+			cursor: pointer;
+			z-index: 2000;
+		}
+
+		.hamburger-menu span {
+			display: block;
+			height: 3px;
+			width: 100%;
+			background-color: #333;
+			border-radius: 3px;
+			transition: all 0.3s ease-in-out;
+		}
+
+		.hamburger-menu.open span:nth-child(1) {
+			transform: translateY(11px) rotate(45deg);
+		}
+
+		.hamburger-menu.open span:nth-child(2) {
+			opacity: 0;
+		}
+
+		.hamburger-menu.open span:nth-child(3) {
+			transform: translateY(-11px) rotate(-45deg);
+		}
+
+		.nav-menu {
+			display: flex;
+		}
+
+		.nav-menu ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+		}
+
+		.nav-menu li a {
+			display: block;
+			padding: 10px 15px;
+			text-decoration: none;
+			color: #333;
+			white-space: nowrap;
+			transition: background-color 0.3s ease;
+		}
+
+		.nav-menu li a:hover {
+			background-color: #e0e0e0;
+			border-radius: 5px;
+		}
+
+		/* ========================================= */
+		/* フッターナビゲーションのスタイル */
+		/* ========================================= */
+
+		.footer-nav ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			/* ✨ 項目を縦並びにするための設定 ✨ */
+			display: flex;
+			flex-direction: column;
+			/* 縦方向に並べる */
+			align-items: center;
+			/* 項目自体（リンク）を中央に寄せる */
+
+			margin-top: 15px;
+			/* 著作権表示からの上余白 */
+			margin-bottom: 15px;
+			/* SNSボタンなどとの下余白 */
+		}
+
+		.footer-nav li {
+			/* 項目間のスペースを縦方向につける */
+			margin: 5px 0;
+			width: auto;
+			/* 幅は自動でOK */
+		}
+
+		.footer-nav li a {
+			/* リンクの見た目を設定 */
+			display: block;
+			padding: 5px 10px;
+			text-decoration: none;
+			color: #666;
+			font-size: 14px;
+			/* white-space: nowrap; は縦並びでは基本的に不要やけど、残しといても問題ない */
+		}
+
+		.footer-nav li a:hover {
+			color: #333;
+			text-decoration: underline;
+		}
+
+
+		/* ========================================= */
+		/* レスポンシブデザイン（スマホ・タブレット用） (変更なし) */
+		/* ========================================= */
+		@media (max-width: 768px) {
+			header {
+				padding: 10px;
+			}
+
+			.hamburger-menu {
+				display: flex;
+			}
+
+			.nav-menu {
+				display: flex;
+				flex-direction: column;
+				position: fixed;
+				top: 0;
+				right: -100vw;
+				width: 100vw;
+				height: 100%;
+				background-color: #f8f8f8;
+				box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+				transition: right 0.3s ease-in-out;
+				z-index: 1500;
+				padding-top: 60px;
+			}
+
+			.nav-menu.open {
+				right: 0;
+			}
+
+			.nav-menu ul {
+				flex-direction: column;
+			}
+
+			.nav-menu li a {
+				padding: 15px 20px;
+				border-bottom: 1px solid #eee;
+			}
+		}
+
+
+		/* ========================================= */
+		/* 既存のスタイル（調整済み） (一部変更あり) */
+		/* ========================================= */
+		body {
+			background-color: #fff;
+			transition: background-color 0.5s ease-in-out;
+			margin: 0;
+		}
+
+		.logo-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			width: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 25;
+			background-color: #fff;
+			will-change: opacity, transform;
+		}
+
+		.logo {
+			max-width: 80%;
+			max-height: 80%;
+			object-fit: contain;
+		}
+
+		.category-details {
+			opacity: 0;
+			transition: opacity 0.5s ease-in-out;
+			margin-top: 150vh;
+			position: relative;
+			z-index: 10;
+			background-color: #fff;
+		}
+
+		/* ========================================= */
+		/* スライドショー関連のCSS (★★ここを大きく変更★★) */
+		/* ========================================= */
+		.slideshow-container {
+			/* King Gnuのサイトに近づけるため、中央寄せは維持しつつ、両端が少し見えるように調整 */
+			width: 100%;
+			/* 親要素いっぱいに広げる */
+			max-width: 1200px;
+			/* PCでの最大幅 */
+			margin: 100px auto;
+			overflow: hidden;
+			/* 内側のラッパーがはみ出た部分を隠す */
+			position: relative;
+			/* opacity: 1; -> 不要 */
+			/* transition: opacity 0.3s ease-in-out; -> 不要 */
+		}
+
+		.slide-wrapper {
+			/* ★★新しく追加する要素★★ */
+			display: flex;
+			/* スライドを横並びにする */
+			width: fit-content;
+			/* 内容に合わせて幅を自動調整（JavaScriptで制御するから実質不要になるかも） */
+			transition: transform 0.5s ease-in-out;
+			/* スライド時のアニメーション */
+		}
+
+		.slide {
+			/* position: absolute; -> 不要 */
+			/* top: 0; left: 0; -> 不要 */
+			/* opacity: 0; transition: opacity 1s ease-in-out; -> 不要 */
+
+			/* ★★ここが一番大事！スライド1枚あたりの幅を設定★★ */
+			flex: 0 0 auto;
+			/* アイテムのサイズを固定し、伸縮させない */
+			width: 60vw;
+			/* 例: ビューポート幅の60% (PCではもっと小さくてもOK) */
+			max-width: 400px;
+			/* 各スライドの最大幅を設定 */
+			margin: 0 10px;
+			/* スライド間の余白 */
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			box-sizing: border-box;
+			/* paddingやborderをwidthに含める */
+		}
+
+		.slide img {
+			width: 100%;
+			/* 親要素の.slideに合わせて幅を100%にする */
+			height: auto;
+			/* 高さは自動調整 */
+			object-fit: cover;
+			border-radius: 8px;
+			/* 角を丸くする (King Gnu風) */
+		}
+
+		/* ========================================= */
+		/* スライダー選択ボタン（ページネーション）のCSS (★★新しく追加★★) */
+		/* ========================================= */
+		.slider-pagination {
+			display: flex;
+			justify-content: center;
+			/* ボタンを中央に配置 */
+			margin-top: 10px;
+			/* スライダーとの間の余白 */
+			gap: 10px;
+			/* ボタン同士の間隔 */
+		}
+
+		.pagination-dot {
+			width: 12px;
+			/* ドットの幅 */
+			height: 12px;
+			/* ドットの高さ */
+			border-radius: 50%;
+			/* 丸い形にする */
+			background-color: #bbb;
+			/* 通常時の色 */
+			border: none;
+			cursor: pointer;
+			transition: background-color 0.3s ease, transform 0.2s ease;
+			padding: 0;
+			/* ボタンのデフォルトのパディングを削除 */
+		}
+
+		.pagination-dot:hover {
+			background-color: #888;
+			/* ホバー時の色 */
+			transform: scale(1.1);
+			/* ホバーで少し大きく */
+		}
+
+		.pagination-dot.active {
+			background-color: #333;
+			/* アクティブなドットの色 */
+			transform: scale(1.2);
+			/* アクティブなドットを少し大きく */
+		}
+
+		/* .showing -> 不要 */
+
+		/* ========================================= */
+		/* その他のスタイル (変更なし) */
+		/* ========================================= */
+		.sns-buttons {
+			display: flex;
+			justify-content: center;
+			margin-top: 60px;
+			margin-bottom: 20px;
+			opacity: 1;
+			transition: opacity 0.3s ease-in-out;
+		}
+
+		.sns-button {
+			margin: 0 10px;
+			transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+			background-color: rgba(255, 255, 255, 0.8);
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.sns-button:hover {
+			transform: scale(1.1);
+			background-color: rgba(0, 0, 0, 0.8);
+		}
+
+		.sns-button img {
+			width: 50px;
+			height: 50px;
+		}
+
+		/* ========================================= */
+		/* 各セクションの共通スタイル（調整） */
+		/* ========================================= */
+		section {
+			/* 既存の共通スタイルはそのまま */
+			padding: 60px 20px;
+			/* ここは二重に書かれていた「padding: 0;」は削除済み */
+			margin-bottom: 40px;
+			/* ここは共通で残す */
+			border-radius: 10px;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+			text-align: center;
+			transition: background-color 0.3s ease, color 0.3s ease;
+			/* 新しく追加：Flexアイテムとして配置される際の伸縮設定 */
+			flex: 1 1 48%;
+			/* 伸縮するが、ベース幅は48% (間隔を考慮) */
+			box-sizing: border-box;
+			/* paddingやborderをwidthに含める */
+			/* ★ここに書いていたlist-itemのスタイルは削除済み★ */
+		}
+
+		/* 各セクションIDごとの背景色と文字色、レイアウト */
+
+		/* ライブ & 音源セクションのセット */
+		#live {
+			background-color: #f0f0f0;
+			/* 少し薄めのグレー */
+			color: #333333;
+			/* 濃いめのグレー */
+			/* margin-bottom は section 共通で対応するため削除 */
+		}
+
+		#music {
+			background-color: #f0f0f0;
+			/* 少し薄めのグレー */
+			color: #333333;
+			/* 濃いめのグレー */
+			/* margin-bottom は section 共通で対応するため削除 */
+		}
+
+
+		#live h2,
+		#music h2 {
+			color: #333333;
+		}
+
+		#live p,
+		#live ul,
+		#music p,
+		#music ul {
+			color: #555555;
+		}
+
+		#live a,
+		#music a {
+			color: #007bff;
+			/* リンク色 */
+		}
+
+		#live a:hover,
+		#music a:hover {
+			color: #0056b3;
+		}
+
+
+		/* スケジュール & プロフィールセクションのセット */
+		#schedule {
+			background-color: #333333;
+			/* 暗めの背景色 */
+			color: #ffffff;
+			/* 白い文字色 */
+			/* margin-bottom は section 共通で対応するため削除 */
+		}
+
+		#profile {
+			background-color: #333333;
+			/* 暗めの背景色 */
+			color: #ffffff;
+			/* 白い文字色 */
+			/* margin-bottom は section 共通で対応するため削除 */
+		}
+
+		#schedule h2,
+		#profile h2 {
+			color: #ffffff;
+		}
+
+		#schedule p,
+		#schedule ul,
+		#profile p,
+		#profile ul {
+			color: #cccccc;
+			/* 薄いグレーの文字色 */
+		}
+
+		#schedule a,
+		#profile a {
+			color: #88ddff;
+			/* 明るめのリンク色 */
+		}
+
+		#schedule a:hover,
+		#profile a:hover {
+			color: #55bbff;
+		}
+
+
+		/* ========================================= */
+		/* 各セクション共通のリストスタイル（★ここを修正★） */
+		/* ========================================= */
+		section ul {
+			list-style: none;
+			/* デフォルトのリストマークを無効化 */
+			padding: 0;
+			/* 左のパディングをリセット */
+			margin: 0 auto 20px;
+			/* 中央揃えと下の余白は維持 */
+			max-width: 800px;
+			/* テキストの最大幅も維持 */
+			text-align: left;
+			/* リストの中身は左寄せにする */
+		}
+
+		section ul li {
+			margin-bottom: 10px;
+			/* リストアイテムの間隔 */
+			position: relative;
+			/* ここは残しておく */
+			/* ★ここに書いてな！★ */
+			padding-left: 1.5em;
+			/* リストマーク分のスペースを確保 (約1文字分+余白) */
+			text-indent: -1.5em;
+			/* リストマーク分だけ行頭をネガティブインデントして、リストマークがリストアイテムの内側に入るようにする */
+			/* text-align: left; /* 念のためテキストも左寄せに（ulで指定済みなら基本的に不要） */
+		}
+
+
+
+		/* ========================================= */
+		/* スマホでの調整 (既存のものに追記・修正) */
+		/* ========================================= */
+		/* 注意：@media (max-width: 768px) の #contact が複数箇所にあります。
+		   一番下の#contactに調整後のスタイルが適用されるように、一つにまとめてください。
+		   ここでは最も新しい状態に合わせたものを記載します。 */
+		@media (max-width: 768px) {
+			section {
+				padding: 30px 15px;
+				margin-bottom: 25px;
+				/* スマホでは各セクションの下に余白を持たせる */
+				flex: auto;
+				/* Flexboxの設定をリセットして縦並びに戻す */
+			}
+
+			section h2 {
+				font-size: 1.8em;
+			}
+
+			section p,
+			section ul {
+				font-size: 0.95em;
+			}
+
+			/* スマホでのコンタクトセクションのスタイルをまとめる */
+			#contact {
+				padding: 10px 20px;
+				/* スマホでは上下をさらに狭く、左右も調整 */
+				margin-top: 40px;
+				margin-bottom: 40px;
+				/* PCと同じように60pxにするとより控えめかも */
+				font-size: 0.85em;
+				/* スマホでのフォントサイズ */
+				max-width: none;
+				/* スマホでも端まで広がるように制限をなくす */
+			}
+
+			#contact h2 {
+				display: none;
+				/* スマホでも見出しは非表示 */
+			}
+
+			#contact h2::after {
+				display: none;
+			}
+		}
+
+
+		/* ========================================= */
+		/* PCブラウザでのセクション横並びレイアウト */
+		/* ========================================= */
+		@media (min-width: 769px) {
+
+			/* 769px以上で適用 */
+			.section-group {
+				display: flex;
+				/* Flexboxを有効にする */
+				justify-content: space-between;
+				/* 要素間に均等なスペースを配置 */
+				gap: 4%;
+				/* 各セクション間の隙間 */
+				margin-bottom: 40px;
+				/* グループ全体の下余白 */
+				max-width: 1200px;
+				/* メインコンテンツの最大幅に合わせる */
+				margin-left: auto;
+				/* 中央寄せ */
+				margin-right: auto;
+				/* 中央寄せ */
+			}
+
+			.section-group section {
+				margin-bottom: 0;
+				/* 親のsection-groupで下余白を管理するため、個別のsectionのmargin-bottomを0にする */
+			}
+		}
+
+		footer {
+			text-align: center;
+			padding: 20px;
+			margin-top: 40px;
+			background-color: #f4f4f4;
+			color: #666;
+			font-size: 14px;
+		}
+
+		/* ========================================= */
+		/* フッター用SNSボタンのスタイル (変更なし) */
+		/* ========================================= */
+		.footer-sns-buttons {
+			display: flex;
+			justify-content: center;
+			margin-top: 15px;
+			margin-bottom: 5px;
+		}
+
+		.footer-sns-button {
+			margin: 0 8px;
+			transition: transform 0.3s ease-in-out;
+			background-color: transparent;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.footer-sns-button:hover {
+			transform: scale(1.2);
+		}
+
+		.footer-sns-button img {
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+		}
+
+		/* スマホでのスライド幅調整 */
+		@media (max-width: 768px) {
+			.slide {
+				width: 80vw;
+				/* スマホではもうちょっと大きく表示 */
+				max-width: none;
+				/* スマホでは最大幅の制限をなくす */
+				margin: 0 5px;
+				/* 余白も調整 */
+			}
+
+			/* ハンバーガーメニューが開いたときにスライドショーが見切れないように調整 */
+			.slideshow-container,
+			.sns-buttons {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}

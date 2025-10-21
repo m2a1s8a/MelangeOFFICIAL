@@ -1,0 +1,289 @@
+		header {
+			background-color: #f4f4f4;
+			padding: 10px 20px;
+			position: fixed;
+			width: 100%;
+			top: 0;
+			left: 0;
+			z-index: 1000;
+			box-sizing: border-box;
+		}
+
+		.header-content {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		header h1 {
+			margin: 0;
+			font-size: 24px;
+			color: #333;
+		}
+
+		.hamburger-menu {
+			display: none;
+			flex-direction: column;
+			justify-content: space-around;
+			width: 30px;
+			height: 25px;
+			cursor: pointer;
+			z-index: 2000;
+		}
+
+		.hamburger-menu span {
+			display: block;
+			height: 3px;
+			width: 100%;
+			background-color: #333;
+			border-radius: 3px;
+			transition: all 0.3s ease-in-out;
+		}
+
+		.hamburger-menu.open span:nth-child(1) {
+			transform: translateY(11px) rotate(45deg);
+		}
+
+		.hamburger-menu.open span:nth-child(2) {
+			opacity: 0;
+		}
+
+		.hamburger-menu.open span:nth-child(3) {
+			transform: translateY(-11px) rotate(-45deg);
+		}
+
+		.nav-menu {
+			display: flex;
+		}
+
+		.nav-menu ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+		}
+
+		.nav-menu li a {
+			display: block;
+			padding: 10px 15px;
+			text-decoration: none;
+			color: #333;
+			white-space: nowrap;
+			transition: background-color 0.3s ease;
+		}
+
+		.nav-menu li a:hover {
+			background-color: #e0e0e0;
+			border-radius: 5px;
+		}
+
+		/* プロフィールページのメイン画像が入ったPタグと画像自体に設定 */
+		#main p {
+			/* 画像を中央に配置するために、Pタグ自体の幅を調整する */
+			max-width: 900px;
+			/* PCでの最大幅（例として900px） */
+			margin: 30px auto;
+			/* 上下に余白を持たせ、左右をautoにして中央寄せ */
+
+			padding: 0 10px;
+			/* 画面端に張り付きすぎないよう、左右に少しだけ余白 */
+			box-sizing: border-box;
+		}
+
+		#main img {
+
+			/* Pタグの幅に対して、画像は100%広がる */
+			width: 100%;
+			/* 高さは比率を維持 */
+			height: auto;
+			/* 角を少し丸くすると見本っぽくなる */
+			border-radius: 12px;
+			display: block;
+
+			/* 中央寄せを確実にするため */
+		}
+
+		/* 固定ヘッダーの高さ分、メインコンテンツ全体を下にずらすための余白 */
+		#main {
+			/* PC・スマホ共通の基本設定 */
+			padding-top: 160px;
+
+
+		}
+
+		/* ========================================= */
+		/* メンバー一覧のコンテナ設定 (デフォルト: PC/横並び) */
+		/* ========================================= */
+		.member-list-sns {
+			/* ✨ これでデフォルト（PC）が横並びになる！ ✨ */
+			display: flex;
+			flex-wrap: wrap;
+			/* 画面幅に応じて折り返す */
+			justify-content: center;
+			/* カード全体を中央に寄せる */
+			gap: 40px;
+			/* カード同士の隙間を広めに取る */
+
+			margin: 40px auto 50px auto;
+			/* 上下に余白を持たせ、左右はautoで中央寄せ */
+			max-width: 1000px;
+			/* 横並びにしたときの全体の最大幅 */
+		}
+
+		/* ========================================= */
+		/* 個々のメンバーカード設定 (デフォルト: PC/2列) */
+		/* ========================================= */
+		.member-card {
+			/*  2列にするための幅設定  */
+			/* 50% - (gapの半分) にして、左右の隙間を確保する */
+			width: calc(50% - 20px);
+
+			/* 縦方向の余白 */
+			margin-bottom: 30px;
+			/* paddingは親要素（.member-list-sns）で管理するから不要 */
+			padding: 0;
+		}
+
+		/* ========================================= */
+		/* 個々のメンバーカード設定 */
+		/* ========================================= */
+		.member-card {
+			/* メンバーごとに区切りをつけるための上下の余白 */
+			margin-bottom: 40px;
+		}
+
+		.member-name {
+			/* 名前を見やすくする */
+			font-size: 1.5rem;
+			/* PCでの名前サイズ */
+			font-weight: bold;
+			margin-bottom: 15px;
+			/* SNSリンクとの間にスペースを空ける */
+			color: #333;
+			/* 文字色を調整してな */
+		}
+
+		/* ========================================= */
+		/* SNSアイコンの横並び設定 (ここは前回の設定と同じや) */
+		/* ========================================= */
+		.member-sns-links {
+			/* アイコンを横並びにする */
+			display: flex;
+			/* 中央寄せにする */
+			justify-content: center;
+			/* アイコン間のスペース */
+			gap: 15px;
+		}
+
+		.sns-icon-link {
+			display: block;
+			transition: opacity 0.3s ease;
+		}
+
+		.sns-icon-link:hover {
+			opacity: 0.7;
+		}
+
+		.sns-icon {
+			/* ！！サイズを固定値にする！！ */
+			width: 35px !important;
+			/* 他のスタイルに負けへんように !important をつける */
+			height: 35px !important;
+			/* widthと同じ値にして正方形にする */
+
+			/* 角を丸くする設定 (これは前回のまま) */
+			border-radius: 50%;
+			display: block;
+		}
+
+		/* メンバー名のサイズも調整しとこか */
+		.member-name {
+			font-size: 1.3rem;
+			font-weight: bold;
+			margin-bottom: 15px;
+			/* 中央寄せを確実にするため */
+			text-align: center;
+		}
+
+
+		@media (max-width: 768px) {
+			header {
+				padding: 10px;
+			}
+
+
+			.hamburger-menu {
+				display: flex;
+			}
+
+			.nav-menu {
+				display: flex;
+				flex-direction: column;
+				position: fixed;
+				top: 0;
+				right: -100vw;
+				width: 100vw;
+				height: 100%;
+				background-color: #f8f8f8;
+				box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+				transition: right 0.3s ease-in-out;
+				z-index: 1500;
+				padding-top: 60px;
+			}
+
+			.nav-menu.open {
+				right: 0;
+			}
+
+			.nav-menu ul {
+				flex-direction: column;
+			}
+
+			.nav-menu li a {
+				padding: 15px 20px;
+				border-bottom: 1px solid #eee;
+			}
+
+
+			#main p {
+				/* スマホでは最大幅の制限をなくし、左右の余白を少し広めにする */
+				max-width: none;
+				padding-top: 70px;
+				padding: 0 20px;
+				/* 左右に20px程度の余白を残す */
+				margin-top: 20px;
+			}
+
+			#main {
+				/* スマホでヘッダーが小さければ、padding-topも少し調整（例: 70px） */
+				padding-top: 100px;
+			}
+
+			.member-name {
+				font-size: 1.2rem;
+				/* スマホでは名前を少し小さくする */
+			}
+
+			.sns-icon {
+				/* スマホではちょっと小さくする (必要なければこのブロックは無視してOK) */
+				width: 30px !important;
+				height: 30px !important;
+			}
+
+			.member-list-sns {
+				/* ✨ これで縦並びに戻る！ ✨ */
+				flex-direction: column;
+				/* 縦方向の並びにする */
+				gap: 0;
+				/* 横並び用のgapは不要になる */
+				max-width: none;
+				/* 幅の制限を解除 */
+			}
+
+			.member-card {
+				width: 90%;
+				/* 画面の端に張り付かないように、左右に余白を付ける */
+				padding: 0 20px;
+				margin-bottom: 40px;
+			}
+		}

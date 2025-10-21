@@ -1,0 +1,184 @@
+		header {
+			background-color: #f4f4f4;
+			padding: 10px 20px;
+			position: fixed;
+			width: 100%;
+			top: 0;
+			left: 0;
+			z-index: 1000;
+			box-sizing: border-box;
+		}
+
+		.header-content {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		header h1 {
+			margin: 0;
+			font-size: 24px;
+			color: #333;
+		}
+
+		.hamburger-menu {
+			display: none;
+			flex-direction: column;
+			justify-content: space-around;
+			width: 30px;
+			height: 25px;
+			cursor: pointer;
+			z-index: 2000;
+		}
+
+		.hamburger-menu span {
+			display: block;
+			height: 3px;
+			width: 100%;
+			background-color: #333;
+			border-radius: 3px;
+			transition: all 0.3s ease-in-out;
+		}
+
+		.hamburger-menu.open span:nth-child(1) {
+			transform: translateY(11px) rotate(45deg);
+		}
+
+		.hamburger-menu.open span:nth-child(2) {
+			opacity: 0;
+		}
+
+		.hamburger-menu.open span:nth-child(3) {
+			transform: translateY(-11px) rotate(-45deg);
+		}
+
+		.nav-menu {
+			display: flex;
+		}
+
+		.nav-menu ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+		}
+
+		.nav-menu li a {
+			display: block;
+			padding: 10px 15px;
+			text-decoration: none;
+			color: #333;
+			white-space: nowrap;
+			transition: background-color 0.3s ease;
+		}
+
+		.nav-menu li a:hover {
+			background-color: #e0e0e0;
+			border-radius: 5px;
+		}
+
+		/* ========================================= */
+		/* ライブ情報リストの全体設定 */
+		/* ========================================= */
+		.live-list {
+			max-width: 700px;
+			/* ライブ情報を中央に寄せて見やすくする */
+			margin: 40px auto;
+			padding: 0 20px;
+			/* 左右の余白 */
+			text-align: left;
+			/* テキストを左寄せにする */
+		}
+
+		/* ========================================= */
+		/* 個々のライブ情報 (live-item) の設定 */
+		/* ========================================= */
+		.live-item {
+			border-bottom: 1px solid #ddd;
+			/* 情報の区切り線 */
+			padding: 20px 0;
+			margin-bottom: 20px;
+
+
+		}
+
+		/* ========================================= */
+		/* 日付部分の設定 */
+		/* ========================================= */
+		.live-date {
+			font-size: 1.1rem;
+			font-weight: bold;
+			color: #ff6600;
+			/* 日付を強調する色 */
+			margin-bottom: 8px;
+			/* 詳細情報との間に余白を空ける */
+
+			/* PCで横並びにするための min-width, flex-shrink は削除する！ */
+		}
+
+		/* ========================================= */
+		/* 詳細情報の設定 */
+		/* ========================================= */
+		.live-details p {
+			margin: 5px 0;
+			/* 詳細情報の行間の調整 */
+			color: #333;
+		}
+
+		.live-title {
+			font-size: 1.05rem;
+			font-weight: bold;
+			/* タイトルを太字に */
+			margin-bottom: 10px;
+		}
+
+		.live-link a {
+			color: #007bff;
+			/* リンクの色 */
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+
+
+
+		@media (max-width: 768px) {
+			header {
+				padding: 10px;
+			}
+
+
+			.hamburger-menu {
+				display: flex;
+			}
+
+			.nav-menu {
+				display: flex;
+				flex-direction: column;
+				position: fixed;
+				top: 0;
+				right: -100vw;
+				width: 100vw;
+				height: 100%;
+				background-color: #f8f8f8;
+				box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+				transition: right 0.3s ease-in-out;
+				z-index: 1500;
+				padding-top: 60px;
+			}
+
+			.nav-menu.open {
+				right: 0;
+			}
+
+			.nav-menu ul {
+				flex-direction: column;
+			}
+
+			.nav-menu li a {
+				padding: 15px 20px;
+				border-bottom: 1px solid #eee;
+			}
+
+
+		}
