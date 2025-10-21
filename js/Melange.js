@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		// ロゴの表示・非表示
 		if (scrollY <= logoHideScroll) {
 			const opacity = 1 - (scrollY / logoHideScroll);
-			const scale = 1 + (scrollY / 25);
+			const scale = 1 + (scrollY / 65);
 
 			logoContainer.style.opacity = opacity;
 			logoContainer.style.transform = `scale(${scale})`;

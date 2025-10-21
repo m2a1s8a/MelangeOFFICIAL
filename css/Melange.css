@@ -1,4 +1,13 @@
 		html,
+		/* Melange.css の <body> スタイル */
+body {
+    display: flex;
+    /* ... (中略) */
+    flex-direction: column;
+
+    /* ★このfont-familyを追記！★ */
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Noto Sans JP", Meiryo, sans-serif;
+}
 		body {
 			height: 100%;
 			/* HTMLとbodyの高さを画面いっぱいに設定 */
