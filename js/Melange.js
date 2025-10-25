@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		const scrollY = window.scrollY;
 
 		// ロゴの表示・非表示
-		if (scrollY <= logoHideScroll) {
+if (scrollY <= logoHideScroll) {
 			const opacity = 1 - (scrollY / logoHideScroll);
 			const scale = 1 + (scrollY / 65);
 
@@ -180,6 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			// logoContainer.style.display = 'none'; // ★これ削除！
 			logoContainer.style.pointerEvents = 'none';
 		}
+
 
 		// カテゴリ詳細の表示
 		if (scrollY >= categoryShowScroll) {

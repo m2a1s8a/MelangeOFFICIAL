@@ -1,0 +1,103 @@
+/* News.css */
+
+/* 固定ヘッダーの裏に隠れないよう、メインコンテンツを下にずらす */
+#news-main {
+	padding-top: 80px; 
+	max-width: 900px; /* ニュース一覧はディスコグラフィーより少し狭くする */
+	margin-left: auto;
+	margin-right: auto;
+	padding: 80px 20px 50px; /* 上下左右のパディングを設定 */
+}
+
+/* ニュース一覧のコンテナ */
+.news-list-container {
+	border-top: 1px solid #ddd; /* 一番上の区切り線 */
+}
+
+/* 個別のニュースアイテム */
+.news-item {
+	display: flex;
+	align-items: center; /* 要素を縦方向で中央揃え */
+	padding: 15px 0;
+	border-bottom: 1px solid #eee; /* 各ニュースの区切り線 */
+	text-decoration: none; /* リンクの下線を消す */
+	color: #333;
+	transition: background-color 0.2s ease;
+}
+
+.news-item:hover {
+	background-color: #f9f9f9; /* ホバー時に薄くハイライト */
+}
+
+/* 日付 */
+.news-date {
+	font-size: 0.95em;
+	color: #666;
+	width: 100px; /* 日付の固定幅 */
+	flex-shrink: 0;
+	margin-right: 20px;
+}
+
+/* カテゴリタグ */
+.news-category {
+	font-size: 0.75em;
+	font-weight: bold;
+	color: #fff;
+	background-color: #aaa;
+	padding: 4px 8px;
+	border-radius: 3px;
+	flex-shrink: 0;
+	margin-right: 20px;
+}
+
+/* カテゴリごとの色分け */
+.tag-release {
+	background-color: #007bff; /* 青系 */
+}
+.tag-live {
+	background-color: #ff6600; /* ライブはオレンジ系 */
+}
+.tag-media {
+	background-color: #28a745; /* 緑系 */
+}
+.tag-info {
+	background-color: #6c757d; /* グレー系 */
+}
+
+
+/* タイトル */
+.news-title {
+	font-size: 1.0em;
+	font-weight: normal;
+	flex-grow: 1; /* 残りのスペースを全て使う */
+	padding-right: 10px; /* 右側に少し余白 */
+}
+
+
+/* スマホ表示の調整 */
+@media (max-width: 768px) {
+	
+	.news-item {
+		/* スマホでは縦並びにする */
+		flex-wrap: wrap; 
+		align-items: flex-start;
+	}
+
+	.news-date {
+		width: auto; 
+		margin-right: 10px;
+		margin-bottom: 0;
+	}
+
+	.news-category {
+		margin-right: 10px;
+		margin-bottom: 5px; /* 下に少し余白 */
+	}
+
+	.news-title {
+		width: 100%; /* タイトルを次の行全体に表示 */
+		font-size: 1.05em;
+		order: 1; /* 表示順序を一番下にする */
+		padding: 5px 0 0 0;
+	}
+}

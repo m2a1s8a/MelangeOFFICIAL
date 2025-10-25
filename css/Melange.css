@@ -1,13 +1,17 @@
 		html,
-		/* Melange.css の <body> スタイル */
-body {
-    display: flex;
-    /* ... (中略) */
-    flex-direction: column;
 
-    /* ★このfont-familyを追記！★ */
-    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Noto Sans JP", Meiryo, sans-serif;
-}
+		/* Melange.css の <body> スタイル */
+		body {
+			display: flex;
+			/* Flexboxを有効にする */
+			flex-direction: column;
+			/* 要素を縦に並べる */
+
+			/* ★ここを追加！★ 携帯とPCで共通のゴシック体を優先的に指定する */
+			font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Noto Sans JP", Meiryo, sans-serif;
+			/* ↑ これでMac, Windows, iOS, Androidの主要なゴシック体を優先してくれるで */
+		}
+
 		body {
 			height: 100%;
 			/* HTMLとbodyの高さを画面いっぱいに設定 */
@@ -400,120 +404,10 @@ body {
 			/* ★ここに書いていたlist-itemのスタイルは削除済み★ */
 		}
 
-		/* 各セクションIDごとの背景色と文字色、レイアウト */
-
-		/* ライブ & 音源セクションのセット */
-		#live {
-			background-color: #f0f0f0;
-			/* 少し薄めのグレー */
-			color: #333333;
-			/* 濃いめのグレー */
-			/* margin-bottom は section 共通で対応するため削除 */
-		}
-
-		#music {
-			background-color: #f0f0f0;
-			/* 少し薄めのグレー */
-			color: #333333;
-			/* 濃いめのグレー */
-			/* margin-bottom は section 共通で対応するため削除 */
-		}
 
 
-		#live h2,
-		#music h2 {
-			color: #333333;
-		}
-
-		#live p,
-		#live ul,
-		#music p,
-		#music ul {
-			color: #555555;
-		}
-
-		#live a,
-		#music a {
-			color: #007bff;
-			/* リンク色 */
-		}
-
-		#live a:hover,
-		#music a:hover {
-			color: #0056b3;
-		}
 
 
-		/* スケジュール & プロフィールセクションのセット */
-		#schedule {
-			background-color: #333333;
-			/* 暗めの背景色 */
-			color: #ffffff;
-			/* 白い文字色 */
-			/* margin-bottom は section 共通で対応するため削除 */
-		}
-
-		#profile {
-			background-color: #333333;
-			/* 暗めの背景色 */
-			color: #ffffff;
-			/* 白い文字色 */
-			/* margin-bottom は section 共通で対応するため削除 */
-		}
-
-		#schedule h2,
-		#profile h2 {
-			color: #ffffff;
-		}
-
-		#schedule p,
-		#schedule ul,
-		#profile p,
-		#profile ul {
-			color: #cccccc;
-			/* 薄いグレーの文字色 */
-		}
-
-		#schedule a,
-		#profile a {
-			color: #88ddff;
-			/* 明るめのリンク色 */
-		}
-
-		#schedule a:hover,
-		#profile a:hover {
-			color: #55bbff;
-		}
-
-
-		/* ========================================= */
-		/* 各セクション共通のリストスタイル（★ここを修正★） */
-		/* ========================================= */
-		section ul {
-			list-style: none;
-			/* デフォルトのリストマークを無効化 */
-			padding: 0;
-			/* 左のパディングをリセット */
-			margin: 0 auto 20px;
-			/* 中央揃えと下の余白は維持 */
-			max-width: 800px;
-			/* テキストの最大幅も維持 */
-			text-align: left;
-			/* リストの中身は左寄せにする */
-		}
-
-		section ul li {
-			margin-bottom: 10px;
-			/* リストアイテムの間隔 */
-			position: relative;
-			/* ここは残しておく */
-			/* ★ここに書いてな！★ */
-			padding-left: 1.5em;
-			/* リストマーク分のスペースを確保 (約1文字分+余白) */
-			text-indent: -1.5em;
-			/* リストマーク分だけ行頭をネガティブインデントして、リストマークがリストアイテムの内側に入るようにする */
-			/* text-align: left; /* 念のためテキストも左寄せに（ulで指定済みなら基本的に不要） */
-		}
 
 
 
@@ -570,28 +464,7 @@ body {
 		/* ========================================= */
 		@media (min-width: 769px) {
 
-			/* 769px以上で適用 */
-			.section-group {
-				display: flex;
-				/* Flexboxを有効にする */
-				justify-content: space-between;
-				/* 要素間に均等なスペースを配置 */
-				gap: 4%;
-				/* 各セクション間の隙間 */
-				margin-bottom: 40px;
-				/* グループ全体の下余白 */
-				max-width: 1200px;
-				/* メインコンテンツの最大幅に合わせる */
-				margin-left: auto;
-				/* 中央寄せ */
-				margin-right: auto;
-				/* 中央寄せ */
-			}
 
-			.section-group section {
-				margin-bottom: 0;
-				/* 親のsection-groupで下余白を管理するため、個別のsectionのmargin-bottomを0にする */
-			}
 		}
 
 		footer {

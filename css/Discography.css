@@ -1,0 +1,225 @@
+/* Discography.css */
+
+/* メインコンテンツの幅と中央寄せ */
+#discography-main {
+	/* ★★★ 修正点：固定ヘッダーの裏に隠れないように、padding-topをここで設定するで！★★★ */
+	padding-top: 80px; 
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 50px;
+}
+
+.page-title {
+	text-align: center;
+	font-size: 2.2em;
+	color: #333;
+	margin-top: 50px; 
+	margin-bottom: 30px;
+}
+
+/* アルバムを横に並べるためのグリッドレイアウト */
+.album-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+	gap: 30px; 
+	padding: 0 20px;
+	margin-bottom: 50px;
+}
+
+.album-item {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	color: #333;
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.album-item:hover {
+	transform: translateY(-5px); 
+	opacity: 0.9;
+}
+
+.album-cover {
+	width: 100%;
+	padding-bottom: 100%; 
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	border-radius: 4px;
+}
+
+.album-cover img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.album-title {
+	font-weight: bold;
+	margin-top: 5px;
+	font-size: 1.0em;
+}
+
+.album-date {
+	font-size: 0.9em;
+	color: #666;
+}
+
+/* スマホ表示の調整 */
+@media (max-width: 768px) {
+	.album-grid {
+		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+		gap: 15px;
+	}
+	
+	.page-title {
+		font-size: 1.8em;
+	}
+}
+
+/* Discography.css の詳細ページ（#discography-detail-main以下）のスタイルを大幅に修正 */
+#discography-detail-main {
+	/* ヘッダーの裏に隠れないように */
+	padding-top: 80px; 
+	max-width: 1000px; 
+	margin: 0 auto;
+	padding-bottom: 80px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: white; 
+	
+	/* ★★★ 中央寄せを強制する！ ★★★ */
+	text-align: center;
+}
+
+/* DISCOGRAPHY メインタイトル */
+.detail-main-title {
+	font-size: 2.5rem; /* King Gnuの5xlをPCではこのくらいに調整 */
+	font-weight: bold;
+	padding-bottom: 40px;
+	margin-top: 30px;
+	color: #111;
+}
+
+/* SO BAD などの楽曲タイトル */
+.detail-sub-title {
+	font-size: 2.5rem; /* King Gnuの3xlをPCではこのくらいに調整 */
+	font-weight: bold;
+	margin-bottom: 25px;
+	color: #111;
+}
+
+/* ジャケット画像（メインビジュアル） */
+.detail-image-main {
+	/* King Gnuのスタイルに合わせ、m-auto, rounded-xlを再現 */
+    display: block;
+	width: 100%;
+	max-width: 450px; /* 画像の最大幅 */
+	height: auto;
+	margin: 0 auto;
+	border-radius: 12px; /* rounded-xl を再現 */
+	margin-bottom: 40px; /* 画像の下に余白 */
+}
+
+/* 情報ボックスのラッパー（中央に配置される情報群） */
+.discography-detail-content {
+    /* King Gnuの.uk-container-xsmallを再現 */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/* 情報ボックス内のテキストを左寄せに */
+.detail-info-box-wrapper {
+	text-align: left;
+	width: 100%;
+    
+    /* 配信リンクの調整 */
+	margin-top: 30px;
+	margin-bottom: 40px;
+}
+
+.detail-info-box-wrapper p {
+    margin: 5px 0;
+    line-height: 1.5;
+    font-size: 1.05em; /* フォントサイズを少し大きく */
+    color: #111;
+}
+
+.detail-info-box-wrapper .font-bold {
+    font-weight: bold;
+}
+
+.credit-line-simple {
+    font-size: 0.9em;
+    color: #444;
+}
+
+.streaming-link-text {
+    margin-top: 20px !important;
+    font-weight: normal !important;
+}
+
+.streaming-link-url a {
+    color: #111;
+    text-decoration: underline;
+    word-break: break-all;
+}
+
+/* 楽曲解説セクション */
+.description-section {
+    width: 100%;
+    text-align: left;
+    margin-top: 30px;
+    padding: 0 10px;
+}
+
+.description-text {
+    line-height: 1.7;
+    color: #444;
+}
+
+/* BACK TO LIST ボタン */
+.back-to-list-p {
+    margin-top: 50px;
+}
+
+.back-to-list-button {
+    /* button クラスは Melange.css にあるはずなので、色味などはそちらに依存 */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #111;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: opacity 0.3s;
+}
+
+/* ========================================= */
+/* スマホ表示の調整 */
+/* ========================================= */
+@media (max-width: 768px) {
+    .detail-main-title {
+        font-size: 2.2rem;
+        padding-bottom: 25px;
+    }
+    .detail-sub-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .detail-image-main {
+        max-width: 90%;
+        margin-bottom: 30px;
+    }
+    
+    .detail-info-box-wrapper p {
+        font-size: 1.0em; 
+    }
+}
