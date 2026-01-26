@@ -462,10 +462,7 @@
 		/* ========================================= */
 		/* PCブラウザでのセクション横並びレイアウト */
 		/* ========================================= */
-		@media (min-width: 769px) {
-
-
-		}
+		@media (min-width: 769px) {}
 
 		footer {
 			text-align: center;
@@ -523,4 +520,16 @@
 				margin-left: auto;
 				margin-right: auto;
 			}
+		}
+
+		/* スライド内のリンク画像にマウスを乗せたら少し薄くする */
+		.slide a:hover img {
+			opacity: 0.8;
+			transition: opacity 0.3s ease;
+		}
+
+		/* カーソルを指の形にする */
+		.slide a {
+			display: block;
+			cursor: pointer;
 		}
