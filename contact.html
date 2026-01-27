@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<title>Mélange CONTACT</title>
+	<meta name="description" content="Mélangeのお問い合わせページです。">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/Melange.css">
+	<link rel="stylesheet" href="css/live.css">
+	<link rel="shortcut icon" href="melange_img/melange.favicon.jpeg" type="image/x-icon">
+
+	<style>
+		/* DISCOGRAPHYページの page-title の設定を再現 */
+		.page-title {
+			text-align: center;
+			font-size: 2.5rem;
+			/* デカく設定 */
+			font-weight: 900;
+			/* かなり太く */
+			letter-spacing: -0.02em;
+			/* わずかに文字間を詰めて力強く */
+			color: #111;
+			margin-top: 60px;
+			/* 上の余白 */
+			margin-bottom: 60px;
+			/* ★下の文章との余白をしっかり確保 */
+			font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+		}
+
+		.contact-main {
+			padding-top: 80px;
+			/* Discographyと同じヘッダー回避用 */
+			max-width: 800px;
+			margin: 0 auto;
+			padding-bottom: 50px;
+			text-align: center;
+		}
+
+		.contact-message {
+			margin-bottom: 40px;
+			line-height: 2;
+			/* 行間を広げて読みやすく */
+			color: #333;
+			font-size: 0.95rem;
+			/* 文章は少し控えめにしてタイトルを際立たせる */
+		}
+
+		/* CONTACTページ独自の中央寄せ設定（既存のCSSを邪魔しない範囲で） */
+		.contact-main {
+			padding-top: 120px;
+			/* 固定ヘッダーに隠れないように */
+			padding-bottom: 80px;
+			max-width: 800px;
+			margin: 0 auto;
+			padding-left: 20px;
+			padding-right: 20px;
+			text-align: center;
+			/* 中身を中央揃え */
+		}
+
+		.contact-message {
+			margin-bottom: 40px;
+			line-height: 1.8;
+			color: #333;
+			font-size: 1rem;
+		}
+
+		.contact-links {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			align-items: center;
+		}
+
+		.contact-links a {
+			color: #333;
+			/* live.cssのリンク色ではなく、テキスト色に合わせる */
+			text-decoration: underline;
+			font-weight: bold;
+			font-size: 1.1rem;
+			transition: opacity 0.3s ease;
+		}
+
+		.contact-links a:hover {
+			opacity: 0.6;
+		}
+	</style>
+</head>
+
+<body class="text-center about sub">
+	<header>
+		<div class="header-content">
+			<h1>CONTACT</h1>
+			<div class="hamburger-menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<nav class="nav-menu">
+				<ul>
+					<li><a href="index.html">TOP</a></li>
+					<li><a href="news.html">NEWS</a></li>
+					<li><a href="live.html">LIVE</a></li>
+					<li><a href="discography.html">DISCOGRAPHY</a></li>
+					<li><a href="profile.html">PROFILE</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+
+	<main class="contact-main">
+		<h2 class="page-title">CONTACT</h2>
+
+
+		<div class="contact-message">
+			<p>
+				アーティストに関するお問い合わせやライブの出演依頼、チケット予約等は、<br>
+				本文にお名前とお問い合わせ内容をご記入のうえ、<br>
+				下記メールアドレスまたはInstagramのDMまでお送りください。
+			</p>
+		</div>
+
+		<div class="contact-links">
+			<a href="mailto:melange.official.jp@gmail.com">
+				melange.official.jp@gmail.com
+			</a>
+
+			<a href="https://www.instagram.com/melange_officia1?igsh=MnM2d2trNmp3eGpp" target="_blank">
+				Instagram DM (@melange_officia1)
+			</a>
+		</div>
+	</main>
+
+	<footer>
+		<nav class="footer-nav">
+			<ul>
+				<li><a href="index.html">TOP</a></li>
+				<li><a href="news.html">NEWS</a></li>
+				<li><a href="live.html">LIVE</a></li>
+				<li><a href="discography.html">DISCOGRAPHY</a></li>
+				<li><a href="profile.html">PROFILE</a></li>
+				<li><a href="contact.html">CONTACT</a></li>
+			</ul>
+		</nav>
+		<div class="footer-sns-buttons">
+			<a href="https://www.instagram.com/melange_officia1?igsh=MnM2d2trNmp3eGpp" class="footer-sns-button"
+				target="_blank">
+				<img src="melange_img/melangeInstagram.jpeg" alt="Instagram">
+			</a>
+			<a href="https://www.x.com/garuban_37" class="footer-sns-button" target="_blank">
+				<img src="melange_img/melangeX.avif" alt="X">
+			</a>
+			<a href="https://www.tiktok.com/@melan9e_37?_t=ZS-90u4BEqOsVu&_r=1" class="footer-sns-button"
+				target="_blank">
+				<img src="melange_img/melangeTiktok.jpg" alt="TikTok">
+			</a>
+		</div>
+		<p>&copy; Mélange </p>
+	</footer>
+
+	<script src="js/profile.js"></script>
+</body>
+
+</html>
